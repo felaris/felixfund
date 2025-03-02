@@ -23,7 +23,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           _buildDivider(),
           _buildBackupSection(),
           _buildDivider(),
-          _buildAppearanceSection(),
+          // _buildAppearanceSection(),
           _buildDivider(),
           _buildAboutSection(),
         ],
@@ -42,17 +42,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
           trailing: Icon(Icons.chevron_right),
           onTap: _showChangePINDialog,
         ),
-        ListTile(
-          leading: Icon(Icons.fingerprint),
-          title: Text('Enable Biometric Authentication'),
-          trailing: Switch(
-            value: false, // Get from preferences in a real app
-            onChanged: (value) {
-              // Enable biometric auth
-              // Not implemented in this version
-            },
-          ),
-        ),
+        // ListTile(
+        //   leading: Icon(Icons.fingerprint),
+        //   title: Text('Enable Biometric Authentication'),
+        //   trailing: Switch(
+        //     value: false, // Get from preferences in a real app
+        //     onChanged: (value) {
+        //       // Enable biometric auth
+        //       // Not implemented in this version
+        //     },
+        //   ),
+        // ),
       ],
     );
   }
@@ -91,34 +91,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  Widget _buildAppearanceSection() {
-    return _buildSection(
-      'Appearance',
-      Icons.palette,
-      [
-        ListTile(
-          leading: Icon(Icons.brightness_6),
-          title: Text('Dark Mode'),
-          trailing: Switch(
-            value: false, // Get from preferences in a real app
-            onChanged: (value) {
-              // Toggle theme
-              // Not implemented in this version
-            },
-          ),
-        ),
-        ListTile(
-          leading: Icon(Icons.attach_money),
-          title: Text('Currency Format'),
-          trailing: Icon(Icons.chevron_right),
-          onTap: () {
-            // Show currency format options
-            // Not implemented in this version
-          },
-        ),
-      ],
-    );
-  }
+  // Widget _buildAppearanceSection() {
+  //   return _buildSection(
+  //     'Appearance',
+  //     Icons.palette,
+  //     [
+  //       ListTile(
+  //         leading: Icon(Icons.brightness_6),
+  //         title: Text('Dark Mode'),
+  //         trailing: Switch(
+  //           value: false, // Get from preferences in a real app
+  //           onChanged: (value) {
+  //             // Toggle theme
+  //             // Not implemented in this version
+  //           },
+  //         ),
+  //       ),
+  //       ListTile(
+  //         leading: Icon(Icons.attach_money),
+  //         title: Text('Currency Format'),
+  //         trailing: Icon(Icons.chevron_right),
+  //         onTap: () {
+  //           // Show currency format options
+  //           // Not implemented in this version
+  //         },
+  //       ),
+  //     ],
+  //   );
+  // }
 
   Widget _buildAboutSection() {
     return _buildSection(
