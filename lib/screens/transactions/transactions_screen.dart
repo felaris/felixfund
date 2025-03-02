@@ -13,7 +13,7 @@ class TransactionsScreen extends StatefulWidget {
 
 class _TransactionsScreenState extends State<TransactionsScreen> with SingleTickerProviderStateMixin {
   final DatabaseService _databaseService = DatabaseService();
-  final currencyFormatter = NumberFormat.currency(locale: 'en_US', symbol: '\$');
+  final currencyFormatter = NumberFormat.currency(locale: 'en_GH', symbol: 'GH₵');
 
   List<TransactionModel> _transactions = [];
   List<TransactionModel> _filteredTransactions = [];

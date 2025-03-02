@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   // Light theme colors
-  static const Color _lightPrimaryColor = Color(0xFF2A8C4A); // Green
+  static const Color _lightPrimaryColor = Color(0xFF1B263B); // Navy Blue
   static const Color _lightSecondaryColor = Color(0xFF4CAF50);
   static const Color _lightBackgroundColor = Color(0xFFF5F5F5);
   static const Color _lightSurfaceColor = Colors.white;

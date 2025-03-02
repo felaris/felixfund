@@ -10,7 +10,7 @@ class AccountsScreen extends StatefulWidget {
 
 class _AccountsScreenState extends State<AccountsScreen> {
   final DatabaseService _databaseService = DatabaseService();
-  final currencyFormatter = NumberFormat.currency(locale: 'en_US', symbol: '\$');
+  final currencyFormatter = NumberFormat.currency(locale: 'en_GH', symbol: 'GH₵');
 
   List<Account> _accounts = [];
   bool _isLoading = true;

@@ -13,7 +13,7 @@ class DebtsScreen extends StatefulWidget {
 
 class _DebtsScreenState extends State<DebtsScreen> {
   final DatabaseService _databaseService = DatabaseService();
-  final currencyFormatter = NumberFormat.currency(locale: 'en_US', symbol: '\$');
+  final currencyFormatter = NumberFormat.currency(locale: 'en_GH', symbol: 'GH₵');
 
   List<Debt> _debts = [];
   bool _isLoading = true;

@@ -12,6 +12,7 @@ import 'package:felixfund/screens/budget/budget_screen.dart';
 import 'package:felixfund/screens/goals/goals_screen.dart';
 import 'package:felixfund/screens/debts/debts_screen.dart';
 import 'package:felixfund/widgets/add_transaction_button.dart';
+import 'package:felixfund/screens/settings/settings_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
   final DatabaseService _databaseService = DatabaseService();
-  final currencyFormatter = NumberFormat.currency(locale: 'en_US', symbol: '\$');
+  final currencyFormatter = NumberFormat.currency(locale: 'en_GH', symbol: 'GH₵');
   bool _isLoading = true;
   double _totalBalance = 0;
   double _totalIncome = 0;
@@ -86,6 +87,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ],
         ),
         actions: [
+          // IconButton(
+          //   icon: Icon(Icons.settings),
+          //   onPressed: () {
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(builder: (_) => SettingsScreen()),
+          //     );
+          //   },
+          // ),
           IconButton(
             icon: Icon(Icons.refresh),
             onPressed: _loadData,
@@ -137,7 +147,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 MaterialPageRoute(builder: (_) => BudgetScreen()),
               ).then((_) => _loadData());
               break;
-          }
+    case 3:
+    Navigator.push(
+    context,
+    MaterialPageRoute(builder: (_) => SettingsScreen()),
+    );
+    break;
+    }
+
         },
         items: [
           BottomNavigationBarItem(
@@ -151,6 +168,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.pie_chart),
             label: 'Budget',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
           ),
         ],
       ),
@@ -375,7 +396,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               'Spending by Category',
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 20),
             SizedBox(
               height: 200,
               child: PieChart(
@@ -508,6 +529,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       context,
                       MaterialPageRoute(builder: (_) => SavingsScreen()),
                     ).then((_) => _loadData());
+                  },
+                ),
+                _buildQuickActionItem(
+                  'Settings',
+                  Icons.settings,
+                  Colors.blueGrey,
+                      () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => SettingsScreen()),
+                    );
                   },
                 ),
                 _buildQuickActionItem(

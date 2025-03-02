@@ -12,7 +12,7 @@ class GoalsScreen extends StatefulWidget {
 
 class _GoalsScreenState extends State<GoalsScreen> {
   final DatabaseService _databaseService = DatabaseService();
-  final currencyFormatter = NumberFormat.currency(locale: 'en_US', symbol: '\$');
+  final currencyFormatter = NumberFormat.currency(locale: 'en_GH', symbol: 'GH₵');
 
   List<Goal> _goals = [];
   bool _isLoading = true;
